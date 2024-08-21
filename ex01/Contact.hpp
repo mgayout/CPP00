@@ -25,8 +25,11 @@ class Contact
 			void	second_print();
 	private:
 			std::string first_name;
+			std::string	rFirst;
 			std::string last_name;
+			std::string	rLast;
 			std::string nickname;
+			std::string	rNick;
 			std::string phone_number;
 			std::string darkest_secret;
 			std::string index;

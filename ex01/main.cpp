@@ -14,7 +14,7 @@
 
 int main ()
 {
-	PhoneBook pb{};
+	PhoneBook pb = PhoneBook();
 	std::string str;
 
 	while(1)
@@ -26,7 +26,7 @@ int main ()
 		else if (str == "SEARCH")
 			pb.search();
 		else if (str == "EXIT")
-			exit(0);
+			return 0;
 	}
 	return 0;
 }
@@ -81,7 +81,6 @@ int	PhoneBook::add()
 int	PhoneBook::search()
 {
 	std::string	index;
-	int			nb;
 
 	first_index();
 	while(index.empty())

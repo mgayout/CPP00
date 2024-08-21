@@ -47,11 +47,9 @@ void	PhoneBook::first_index()
 
 int	PhoneBook::second_index(std::string index)
 {
-	int	nb;
-
-	nb = atoi(index.c_str());
-	if (index.empty() || nb <= 0 || nb > 8)
+	if (index.size() == 1 && index[0] >= '1' && index[0] <= '8')
+		contact[index[0] - 1 - '0'].second_print();
+	else
 		return 0;
-	contact[nb - 1].second_print();
 	return 1;
 }

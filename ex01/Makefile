@@ -17,15 +17,12 @@ OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-			g++ $(OBJ) $(FLAG) -o $(NAME)
+$(NAME):
+			c++ $(SRC) $(FLAG) -o $(NAME)
 
-clean:
-			rm -rf $(OBJ)
-
-fclean: clean
+fclean:
 			rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all fclean re

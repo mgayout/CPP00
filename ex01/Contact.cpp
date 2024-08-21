@@ -24,48 +24,45 @@ void Contact::set_contact(std::string first_name, std::string last_name, std::st
 	this->nickname = nickname;
 	this->phone_number = phone_number;
 	this->darkest_secret = darkest_secret;
-	this->index = std::to_string(count + 1);
+	this->index = count + 1 + '0';
 }
 
 void	Contact::first_print()
 {
-	int	i;
-
-	if (first_name.length() >= 10)
+	if (first_name.length() > 10)
 	{
-		first_name.resize(9);
-		first_name.resize(10, '.');
+		rFirst = first_name;
+		rFirst.resize(9);
+		rFirst.resize(10, '.');
 	}
-	if (last_name.length() >= 10)
+	if (last_name.length() > 10)
 	{
-		last_name.resize(9);
-		last_name.resize(10, '.');
+		rLast = last_name;
+		rLast.resize(9);
+		rLast.resize(10, '.');
 	}
-	if (nickname.length() >= 10)
+	if (nickname.length() > 10)
 	{
-		nickname.resize(9);
-		nickname.resize(10, '.');
+		rNick = nickname;
+		rNick.resize(9);
+		rNick.resize(10, '.');
 	}
 	std::cout << "|";
-	i = -1;
-	while(++i + index.length() != 10)
+	for (int i = 0; i + index.length() != 10; i++)
 		std::cout << " ";
 	std::cout << index;
 	std::cout << "|";
-	i = -1;
-	while(++i + first_name.length() != 10)
+	for (int i = 0; i + rFirst.length() != 10; i++)
 		std::cout << " ";
-	std::cout << first_name;
+	std::cout << rFirst;
 	std::cout << "|";
-	i = -1;
-	while(++i + last_name.length() != 10)
+	for (int i = 0; i + rLast.length() != 10; i++)
 		std::cout << " ";
-	std::cout << last_name;
+	std::cout << rLast;
 	std::cout << "|";
-	i = -1;
-	while(++i + nickname.length() != 10)
+	for (int i = 0; i + rNick.length() != 10; i++)
 		std::cout << " ";
-	std::cout << nickname;
+	std::cout << rNick;
 	std::cout << "|" <<std::endl;
 }
 
